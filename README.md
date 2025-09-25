@@ -1,114 +1,122 @@
-FloatChat – AI-Powered Conversational Interface for Ocean Data
-“Intelligent Insights Beneath the Waves”
-🌟 Project Overview
-FloatChat is an AI-powered conversational system designed to democratize access to vast and complex oceanographic data. It allows users, including non-technical individuals like policymakers, fishermen, and students, to query, explore, and visualize ocean data using natural language.
+# 🌊 FloatChat – AI Conversational Interface for Ocean Data
 
-This project was developed for the Smart India Hackathon (SIH) 2025, Problem Statement ID SIH25040, provided by the Ministry of Earth Sciences (MoES) and INCOIS.
+**Team Name:** AquaMind
+**Tagline:** *“Intelligent Insights Beneath the Waves”*
 
-🌊 Problem Statement
-Oceanographic data from sources like ARGO floats, satellites, and buoys is massive and heterogeneous, requiring specialized skills and complex tools to access and interpret. FloatChat aims to bridge this gap by creating an intuitive system that makes this data accessible to everyone through a simple, conversational interface.
+---
 
-✨ Key Features
-NLP Chatbot: A conversational AI that handles multi-turn conversations and understands natural language queries, with optional voice input.
+## 📌 Project Overview
 
-Retrieval-Augmented Generation (RAG): A robust backend system that uses LLMs to map natural language queries to structured database queries (SQL) for accurate and context-aware responses.
+FloatChat is an **AI-powered conversational system** that allows users to query, explore, and visualize **oceanographic datasets** (e.g., ARGO NetCDF data) through natural language.
 
-Interactive Visualizations: A dynamic dashboard with geospatial maps and plots to visualize data, including:
+By combining **LLMs, RAG pipelines, predictive models, and interactive dashboards**, FloatChat bridges the gap between raw ocean data and decision-makers, empowering **scientists, policymakers, and even non-technical users**.
 
-Depth-time plots.
+---
 
-Trajectories of floats.
+## 🚀 Features
 
-Interactive heatmaps.
+* **Conversational AI** (Text + Voice) → Query ARGO data using natural language
+* **RAG + LLM Backend** → Accurate answers mapped to SQL/vector DB queries
+* **Interactive Dashboard** → Plotly.js charts & Mapbox-based geospatial maps
+* **Predictive Analytics** → Forecasting with ARIMA & LSTM, anomaly detection
+* **Explainable AI (XAI)** → SHAP/LIME for transparency in predictions
+* **Role-Based Access** → Dashboards for Scientists, Policymakers, Fishermen
+* **Exportable Reports** → Generate CSV/NetCDF/PDF summaries
+* **Gamified Ocean Health Score** → 0–100 metric for clarity & engagement
 
-Clickable map points with detailed information.
+---
 
-Predictive Analytics: Utilizes machine learning models (ARIMA, LSTM) to provide predictive insights, such as forecasting ocean parameters and detecting anomalies like pollution hotspots or cyclone zones.
+## 🛠️ Tech Stack
 
-Explainable AI (XAI): Provides reasoning behind model predictions using tools like SHAP/LIME to build user trust and ensure transparency.
+**Frontend**: React.js + Tailwind CSS
+**Visualizations**: Plotly.js, Mapbox
+**Backend & API**: FastAPI (REST/GraphQL APIs)
+**AI/ML**:
 
-Multi-Role Dashboard: Tailored user experiences for different roles like Scientists, Policymakers, and Fishermen, each with personalized dashboards.
+* LLMs (LLaMA, Mistral, GPT)
+* RAG pipeline
+* Forecasting models (ARIMA, LSTM, Prophet)
 
-Data Export: Allows users to export tabular summaries in formats like ASCII, NetCDF, and PDF reports for practical use.
+**Databases**:
 
-💻 Technical Stack
-The project is a full-stack application built with the following technologies:
+* PostgreSQL (structured)
+* ChromaDB (vector DB for semantic search)
 
-Frontend: React.js and Tailwind CSS.
+**Data Ingestion**: Python (`xarray`, `netCDF4`)
+**Cloud Infrastructure**:
 
-Backend & API: FastAPI for high-performance and scalable API serving.
+* Frontend → Vercel
+* Backend → AWS EC2 / GCP Cloud Run
 
-AI/ML: Large Language Models (LLaMA, Mistral), a RAG pipeline, and time-series forecasting models (ARIMA, LSTM).
+---
 
-Databases: PostgreSQL for structured data and ChromaDB for the vector database (semantic search).
+## 📂 Data Sources
 
-Data Ingestion: Python with xarray and netCDF4 libraries to handle ARGO NetCDF files.
+* 🌐 [Argo Global Data Repository](ftp://ftp.ifremer.fr/ifremer/argo)
+* 🌐 [Indian Argo Project (INCOIS)](https://incois.gov.in/OON/index.jsp)
 
-Cloud Infrastructure: Frontend hosted on Vercel and backend on AWS EC2 or GCP Cloud Run.
+---
 
-Version Control: GitHub with GitHub Actions for CI/CD.
+## ⚡ Getting Started
 
-🚀 Getting Started
-Prerequisites
-Python 3.8+
+### 1. Clone the Repository
 
-Node.js and npm
+```bash
+git clone https://github.com/your-username/FloatChat-AquaMind.git
+cd FloatChat-AquaMind
+```
 
-Docker (recommended)
+### 2. Backend Setup (FastAPI)
 
-Installation
-Clone the repository:
-
-Bash
-
-git clone https://github.com/zaheerk19n/FloatChat-AquaMinds.git
-cd FloatChat-AquaMinds
-Set up the Backend:
-
-Bash
-
-# Install Python dependencies
+```bash
+cd backend
 pip install -r requirements.txt
-
-# Configure environment variables (e.g., database connection strings)
-# Start the FastAPI server
 uvicorn main:app --reload
-Set up the Frontend:
+```
 
-Bash
+### 3. Frontend Setup (React + Tailwind)
 
-# Navigate to the frontend directory
+```bash
 cd frontend
-
-# Install Node.js dependencies
 npm install
+npm run dev
+```
 
-# Start the React app
-npm start
-Data Setup
-The system requires ARGO float data. You can download sample datasets from:
+### 4. Access Application
 
-Argo Global Data Repository.
+* Frontend: `http://localhost:3000`
+* API Docs: `http://localhost:8000/docs`
 
-Indian Argo Project (INCOIS).
+---
 
-Follow the data ingestion pipeline steps to process and load the data into your local PostgreSQL and ChromaDB instances.
+## 📊 MVP vs Enhanced Build
 
-📈 Roadmap (MVP vs. Enhanced)
-The project follows a phased development approach:
+**MVP (Hackathon-Ready):**
 
-MVP (Hackathon Ready)	Enhanced Features (Judge-Impressing)
-Text-based chatbot.	Voice + text queries.
-Basic ARGO dataset.	Full ARGO + satellite + buoy data.
-Depth-time plots and line graphs.	Interactive maps, heatmaps, and predictive alerts.
-SQL/vector DB RAG pipeline.	Predictive analytics & anomaly detection.
-Basic dashboard.	Multi-role dashboard + gamified health score.
-Basic query responses.	Explainable AI + PDF report export.
-🤝 Contribution
-Contributions are welcome! If you find a bug or have a feature suggestion, please open an issue.
+* Text chatbot
+* ARGO dataset queries
+* Basic dashboard + SQL/vector DB integration
 
-📞 Contact
-For questions or collaborations, please open an issue on GitHub.
+**Enhanced (Judge-Impressing):**
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+* Voice chatbot + multilingual NLP
+* Predictive analytics (ARIMA, LSTM, anomaly detection)
+* Interactive maps & heatmaps
+* Explainable AI + PDF report export
+* Multi-role dashboards + gamified health score
+
+---
+
+## 🎯 Why This Project Stands Out
+
+* ✅ **Innovative**: Rare use of AI + oceanographic data
+* ✅ **Demo-Friendly**: Conversational AI + visual dashboards + live queries
+* ✅ **High Impact**: Supports researchers, policymakers, fishermen
+* ✅ **Scalable**: Future-ready (satellite data, gliders, buoys)
+* ✅ **Portfolio-Ready**: Combines **AI, ML, web, and cloud engineering**
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
