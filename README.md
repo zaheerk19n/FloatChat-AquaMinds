@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+FloatChat – AI-Powered Conversational Interface for Ocean Data
+“Intelligent Insights Beneath the Waves”
+🌟 Project Overview
+FloatChat is an AI-powered conversational system designed to democratize access to vast and complex oceanographic data. It allows users, including non-technical individuals like policymakers, fishermen, and students, to query, explore, and visualize ocean data using natural language.
 
-## Project info
+This project was developed for the Smart India Hackathon (SIH) 2025, Problem Statement ID SIH25040, provided by the Ministry of Earth Sciences (MoES) and INCOIS.
 
-**URL**: https://lovable.dev/projects/cba8dfa9-7736-48a3-bbdd-1c39bbe50ca9
+🌊 Problem Statement
+Oceanographic data from sources like ARGO floats, satellites, and buoys is massive and heterogeneous, requiring specialized skills and complex tools to access and interpret. FloatChat aims to bridge this gap by creating an intuitive system that makes this data accessible to everyone through a simple, conversational interface.
 
-## How can I edit this code?
+✨ Key Features
+NLP Chatbot: A conversational AI that handles multi-turn conversations and understands natural language queries, with optional voice input.
 
-There are several ways of editing your application.
+Retrieval-Augmented Generation (RAG): A robust backend system that uses LLMs to map natural language queries to structured database queries (SQL) for accurate and context-aware responses.
 
-**Use Lovable**
+Interactive Visualizations: A dynamic dashboard with geospatial maps and plots to visualize data, including:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cba8dfa9-7736-48a3-bbdd-1c39bbe50ca9) and start prompting.
+Depth-time plots.
 
-Changes made via Lovable will be committed automatically to this repo.
+Trajectories of floats.
 
-**Use your preferred IDE**
+Interactive heatmaps.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clickable map points with detailed information.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Predictive Analytics: Utilizes machine learning models (ARIMA, LSTM) to provide predictive insights, such as forecasting ocean parameters and detecting anomalies like pollution hotspots or cyclone zones.
 
-Follow these steps:
+Explainable AI (XAI): Provides reasoning behind model predictions using tools like SHAP/LIME to build user trust and ensure transparency.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Multi-Role Dashboard: Tailored user experiences for different roles like Scientists, Policymakers, and Fishermen, each with personalized dashboards.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Data Export: Allows users to export tabular summaries in formats like ASCII, NetCDF, and PDF reports for practical use.
 
-# Step 3: Install the necessary dependencies.
-npm i
+💻 Technical Stack
+The project is a full-stack application built with the following technologies:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Frontend: React.js and Tailwind CSS.
 
-**Edit a file directly in GitHub**
+Backend & API: FastAPI for high-performance and scalable API serving.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+AI/ML: Large Language Models (LLaMA, Mistral), a RAG pipeline, and time-series forecasting models (ARIMA, LSTM).
 
-**Use GitHub Codespaces**
+Databases: PostgreSQL for structured data and ChromaDB for the vector database (semantic search).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Data Ingestion: Python with xarray and netCDF4 libraries to handle ARGO NetCDF files.
 
-## What technologies are used for this project?
+Cloud Infrastructure: Frontend hosted on Vercel and backend on AWS EC2 or GCP Cloud Run.
 
-This project is built with:
+Version Control: GitHub with GitHub Actions for CI/CD.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🚀 Getting Started
+Prerequisites
+Python 3.8+
 
-## How can I deploy this project?
+Node.js and npm
 
-Simply open [Lovable](https://lovable.dev/projects/cba8dfa9-7736-48a3-bbdd-1c39bbe50ca9) and click on Share -> Publish.
+Docker (recommended)
 
-## Can I connect a custom domain to my Lovable project?
+Installation
+Clone the repository:
 
-Yes, you can!
+Bash
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+git clone https://github.com/zaheerk19n/FloatChat-AquaMinds.git
+cd FloatChat-AquaMinds
+Set up the Backend:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Bash
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Configure environment variables (e.g., database connection strings)
+# Start the FastAPI server
+uvicorn main:app --reload
+Set up the Frontend:
+
+Bash
+
+# Navigate to the frontend directory
+cd frontend
+
+# Install Node.js dependencies
+npm install
+
+# Start the React app
+npm start
+Data Setup
+The system requires ARGO float data. You can download sample datasets from:
+
+Argo Global Data Repository.
+
+Indian Argo Project (INCOIS).
+
+Follow the data ingestion pipeline steps to process and load the data into your local PostgreSQL and ChromaDB instances.
+
+📈 Roadmap (MVP vs. Enhanced)
+The project follows a phased development approach:
+
+MVP (Hackathon Ready)	Enhanced Features (Judge-Impressing)
+Text-based chatbot.	Voice + text queries.
+Basic ARGO dataset.	Full ARGO + satellite + buoy data.
+Depth-time plots and line graphs.	Interactive maps, heatmaps, and predictive alerts.
+SQL/vector DB RAG pipeline.	Predictive analytics & anomaly detection.
+Basic dashboard.	Multi-role dashboard + gamified health score.
+Basic query responses.	Explainable AI + PDF report export.
+🤝 Contribution
+Contributions are welcome! If you find a bug or have a feature suggestion, please open an issue.
+
+📞 Contact
+For questions or collaborations, please open an issue on GitHub.
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
